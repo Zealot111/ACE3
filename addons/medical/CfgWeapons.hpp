@@ -6,20 +6,6 @@ class CfgWeapons {
     class MedikitItem;
 
     // ITEMS
-    class FirstAidKit: ItemCore {
-        type = 0;
-        ace_arsenal_hide = 1;
-        class ItemInfo: InventoryFirstAidKitItem_Base_F {
-            mass = 4;
-        };
-    };
-    class Medikit: ItemCore {
-        type = 0;
-        ace_arsenal_hide = 1;
-        class ItemInfo: MedikitItem {
-            mass = 60;
-        };
-    };
 
     class ACE_ItemCore;
     class ACE_fieldDressing: ACE_ItemCore {
