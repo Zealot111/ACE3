@@ -30,7 +30,7 @@ if (isServer) then {
 
         private _spareWheels = _vehicle getVariable QGVAR(editorLoadedWheels);
         if (isNil "_spareWheels") then {
-            _spareWheels = [0, 1] select (_vehicle isKindOf "Car"); // must match eden attribute default
+            _spareWheels = [0, 2] select (_vehicle isKindOf "Car"); // must match eden attribute default
         };
         if (_spareWheels > 0) then {
             [_vehicle, _spareWheels, "ACE_Wheel"] call FUNC(addSpareParts);
