@@ -22,15 +22,15 @@ while {({_x == "FirstAidKit"} count items _unit) > 0} do {
     _unit removeItem "FirstAidKit";
     if (GVAR(level) >= 2) then {
         for [{_y= 1},{_y <= 6},{_y = _y + 1}] do {
-            _unit addItemToBackpack "ACE_fieldDressing";
-            _unit addItemToBackpack "ACE_packingBandage";
-            _unit addItemToBackpack "ACE_elasticBandage";
-            _unit addItemToBackpack "ACE_quikclot";
+            _unit addItem "ACE_fieldDressing";
+            _unit addItem "ACE_packingBandage";
+            _unit addItem "ACE_elasticBandage";
+            _unit addItem "ACE_quikclot";
         };
         for [{_y= 1},{_y <= 2},{_y = _y + 1}] do {
-            _unit addItemToBackpack "ACE_morphine";
-            _unit addItemToBackpack "ACE_epinephrine";
-            _unit addItemToBackpack "ACE_tourniquet";
+            _unit addItem "ACE_morphine";
+            _unit addItem "ACE_epinephrine";
+            _unit addItem "ACE_tourniquet";
         };
     } else {
         _unit addItem "ACE_fieldDressing";
