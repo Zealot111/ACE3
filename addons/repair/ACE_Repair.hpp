@@ -6,7 +6,7 @@ class ACE_Repair {
 
             repairLocations[] = {"All"};
             requiredEngineer = QGVAR(engineerSetting_Wheel);
-            repairingTime = 10;
+            repairingTime = 15;
             repairingTimeSelfCoef = 1;
             items = QGVAR(wheelRepairRequiredItems);
             condition = QUOTE(call FUNC(canReplaceWheel));
@@ -35,7 +35,7 @@ class ACE_Repair {
             displayNameProgress = CSTRING(RepairingHitPoint);
             condition = QUOTE(call FUNC(canMiscRepair));
             requiredEngineer = QGVAR(engineerSetting_Repair);
-            repairingTime = 15;
+            repairingTime = 30;
             callbackSuccess = QUOTE(call FUNC(doRepair));
             items[] = {"ToolKit"};
             itemConsumed = QGVAR(consumeItem_ToolKit);
@@ -48,6 +48,7 @@ class ACE_Repair {
             callbackSuccess = QUOTE(call FUNC(doRepairTrack));
             requiredEngineer = QGVAR(engineerSetting_Wheel);
             claimObjects[] = {{"ACE_Track"}};
+            repairingTime = 20;
             itemConsumed = 0;
         };
         class RemoveTrack: MiscRepair {
@@ -56,6 +57,7 @@ class ACE_Repair {
             condition = QUOTE(call FUNC(canRemove));
             callbackSuccess = QUOTE(call FUNC(doRemoveTrack));
             requiredEngineer = QGVAR(engineerSetting_Wheel);
+            repairingTime = 20;
             itemConsumed = 0;
         };
         class ReplaceTrack: RemoveTrack {
@@ -64,6 +66,7 @@ class ACE_Repair {
             condition = QUOTE(call FUNC(canReplaceTrack));
             callbackSuccess = QUOTE(call FUNC(doReplaceTrack));
             requiredEngineer = QGVAR(engineerSetting_Wheel);
+            repairingTime = 25;
             claimObjects[] = {{"ACE_Track"}};
         };
         class FullRepair: MiscRepair {
@@ -71,7 +74,7 @@ class ACE_Repair {
             displayNameProgress = CSTRING(fullyRepairing);
             requiredEngineer = QGVAR(engineerSetting_fullRepair);
             repairLocations[] = {QGVAR(fullRepairLocation)};
-            repairingTime = 30;
+            repairingTime = 180;
             condition = "-1 != ((getAllHitPointsDamage _target param [2,[]]) findIf {_x > 0})";
             callbackSuccess = QUOTE(call FUNC(doFullRepair));
             itemConsumed = QGVAR(consumeItem_ToolKit);
