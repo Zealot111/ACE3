@@ -16,6 +16,7 @@
  */
 
 params ["_unit"];
+if (!local _unit) exitwith {};
 
 while {({_x == "FirstAidKit"} count items _unit) > 0} do {
     _unit removeItem "FirstAidKit";
@@ -64,9 +65,10 @@ while {({_x == "Medikit"} count items _unit) > 0} do {
         for [{_y= 1},{_y <= 4},{_y = _y + 1}] do {
             _unit addItemToBackpack "ACE_salineIV_500";
         };
-        _unit addItemToBackpack "ACE_surgicalKit";
+        
 	_times = _times - 1;
         };
+	_unit addItemToBackpack "ACE_surgicalKit";
     } else {
         _unit addItemToBackpack "ACE_epinephrine";
         _unit addItemToBackpack "ACE_epinephrine";
