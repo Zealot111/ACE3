@@ -87,6 +87,10 @@ PREP(treatmentAdvanced_fullHealTreatmentTime);
 PREP(treatmentAdvanced_medication);
 PREP(treatmentAdvanced_medicationLocal);
 PREP(treatmentAdvanced_surgicalKit_onProgress);
+//Code inserted by SIVAT
+PREP(treatmentAdvanced_suricalKit_done);
+PREP(treatmentAdvanced_suricalKit_doneLocal);
+//End of inserted code
 PREP(treatmentBasic_bloodbag);
 PREP(treatmentBasic_bloodbagLocal);
 PREP(treatmentBasic_epipen);
