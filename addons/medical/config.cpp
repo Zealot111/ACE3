@@ -43,6 +43,9 @@ class ACE_newEvents {
     treatmentBasic_bloodbagLocal = QGVAR(treatmentBasic_bloodbagLocal);
     treatmentAdvanced_medicationLocal = QGVAR(treatmentAdvanced_medicationLocal);
     treatmentAdvanced_fullHealLocal = QGVAR(treatmentAdvanced_fullHealLocal);
+    //Code inserted by SIVAT
+    treatmentAdvanced_suricalKit_doneLocal = QGVAR(treatmentAdvanced_suricalKit_doneLocal);
+    //End of inserted code
     treatmentAdvanced_CPRLocal = QGVAR(treatmentAdvanced_CPRLocal);
     treatmentAdvanced_bandageLocal = QGVAR(treatmentAdvanced_bandageLocal);
     setUnconscious = QGVAR(setUnconscious);
