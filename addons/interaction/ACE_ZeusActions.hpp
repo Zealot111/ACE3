@@ -7,7 +7,7 @@ class ACE_ZeusActions {
 
         class stance {
             displayName = "$STR_A3_RscAttributeUnitPos_Title";
-            condition = QUOTE(-1 < (curatorSelected select 0) findIf {_x isKindOf 'CAManBase'});
+            condition = QUOTE(ZEUS_ACTION_CONDITION && {-1 < (curatorSelected select 0) findIf {_x isKindOf 'CAManBase'}});
 
             class prone {
                 displayName = "$STR_Pos_Down";
@@ -34,7 +34,7 @@ class ACE_ZeusActions {
         class remoteControl {
             displayName = "$STR_A3_CfgVehicles_ModuleRemoteControl_F";
             icon = "\A3\Modules_F_Curator\Data\portraitRemoteControl_ca.paa";
-            condition = QUOTE(-1 < (curatorSelected select 0) findIf {_x isKindOf 'CAManBase'});
+            condition = QUOTE(ZEUS_ACTION_CONDITION && {-1 < (curatorSelected select 0) findIf {!isNull effectiveCommander _x}});
             statement = QUOTE( \
                 private _units = curatorSelected select 0; \
                 private _unit = _units param [ARR_2( \
@@ -45,15 +45,16 @@ class ACE_ZeusActions {
                     objNull \
                 )]; \
                 bis_fnc_curatorObjectPlaced_mouseOver = [ARR_2('OBJECT',_unit)]; \
-                group _target createUnit [ARR_5('ModuleRemoteControl_F',[ARR_3(0,0,0)],[],0,'NONE')]; \
+                private _rc = group _target createUnit [ARR_5('ModuleRemoteControl_F',[ARR_3(0,0,0)],[],0,'NONE')]; \
+                _rc setVariable [ARR_2('BIS_fnc_initModules_disableAutoActivation',false)]; \
             );
         };
 
         class GVAR(repair) {
             displayName = "$STR_repair";
             icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
-            condition = QUOTE(-1 < (curatorSelected select 0) findIf {_x isKindOf 'AllVehicles' && {!(_x isKindOf 'Man')}});
-            statement = QUOTE({if (_x isKindOf 'AllVehicles' && {!(_x isKindOf 'Man')}) then {_x setDamage 0}} forEach (curatorSelected select 0));
+            condition = QUOTE(ZEUS_ACTION_CONDITION && {-1 < (curatorSelected select 0) findIf {_x isKindOf 'AllVehicles' && {!(_x isKindOf 'Man')}}});
+            statement = QUOTE(call FUNC(repair_Statement));
         };
     };
 
@@ -64,6 +65,7 @@ class ACE_ZeusActions {
 
         class behaviour {
             displayName = "$STR_Combat_Mode";
+            condition = QUOTE(ZEUS_ACTION_CONDITION);
 
             class careless {
                 displayName = "$STR_Combat_Careless";
@@ -93,6 +95,7 @@ class ACE_ZeusActions {
 
         class speed {
             displayName = "$STR_HC_Menu_Speed";
+            condition = QUOTE(ZEUS_ACTION_CONDITION);
 
             class limited {
                 displayName = "$STR_Speed_Limited";
@@ -113,6 +116,7 @@ class ACE_ZeusActions {
 
         class formation {
             displayName = "$STR_Formation";
+            condition = QUOTE(ZEUS_ACTION_CONDITION);
 
             class wedge {
                 displayName = "$STR_Wedge";
@@ -169,6 +173,7 @@ class ACE_ZeusActions {
 
         class behaviour {
             displayName = "$STR_Combat_Mode";
+            condition = QUOTE(ZEUS_ACTION_CONDITION);
 
             class careless {
                 displayName = "$STR_Combat_Careless";
@@ -198,6 +203,7 @@ class ACE_ZeusActions {
 
         class speed {
             displayName = "$STR_HC_Menu_Speed";
+            condition = QUOTE(ZEUS_ACTION_CONDITION);
 
             class limited {
                 displayName = "$STR_Speed_Limited";
@@ -218,6 +224,7 @@ class ACE_ZeusActions {
 
         class formation {
             displayName = "$STR_Formation";
+            condition = QUOTE(ZEUS_ACTION_CONDITION);
 
             class wedge {
                 displayName = "$STR_Wedge";

@@ -115,6 +115,7 @@ PREP(moduleAssignMedicalVehicle);
 PREP(moduleAssignMedicalFacility);
 PREP(copyDeadBody);
 PREP(unconsciousPFH);
+PREP(updateTourniquets);
 
 // Networked litter
 PREP(createLitter);

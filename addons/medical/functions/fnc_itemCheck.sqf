@@ -15,6 +15,8 @@
  * Public: Yes
  */
 
+if (GVAR(convertItems) == 2) exitWith {};
+
 params ["_unit"];
 if (local _unit) then {
 	while {({_x == "FirstAidKit"} count items _unit) > 0} do {
