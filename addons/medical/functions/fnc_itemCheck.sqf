@@ -21,6 +21,7 @@ params ["_unit"];
 if (local _unit) then {
 	while {({_x == "FirstAidKit"} count items _unit) > 0} do {
 		_unit removeItem "FirstAidKit";
+		if (GVAR(convertItems) == 0) then {
 		if (GVAR(level) >= 2) then {
 			for [{_y= 1},{_y <= 4},{_y = _y + 1}] do {
 				//_unit addItem "ACE_fieldDressing";
@@ -39,10 +40,12 @@ if (local _unit) then {
 			_unit addItem "ACE_fieldDressing";
 			_unit addItem "ACE_morphine";
 		};
+		};
 	};
 
 	while {({_x == "Medikit"} count items _unit) > 0} do {
 		_unit removeItem "Medikit";
+		if (GVAR(convertItems) == 0) then {
 		if (GVAR(level) >= 2) then {
 		private _times = ceil (count units _unit / 4);
 
@@ -84,6 +87,7 @@ if (local _unit) then {
 			_unit addItemToBackpack "ACE_epinephrine";
 			_unit addItemToBackpack "ACE_bloodIV";
 			_unit addItemToBackpack "ACE_bloodIV";
+		};
 		};
 	};
 };
