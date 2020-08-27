@@ -62,6 +62,7 @@ if (local _unit) then {
 			};
 			for [{_y= 1},{_y <= 2},{_y = _y + 1}] do {
 				_unit addItemToBackpack "ACE_salineIV";
+                _unit addItemToBackpack "ACE_CableTie";
 				};
 			for [{_y= 1},{_y <= 5},{_y = _y + 1}] do {
 				_unit addItemToBackpack "ACE_fieldDressing";
