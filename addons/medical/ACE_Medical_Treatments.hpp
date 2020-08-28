@@ -292,9 +292,6 @@ class ACE_Medical_Actions {
             requiredMedic = QGVAR(medicSetting_SurgicalKit);
             patientStateCondition = QGVAR(useCondition_SurgicalKit);
             treatmentTime = "(count ((_this select 1) getVariable ['ACE_Medical_bandagedWounds', []]) * 5)";
-            //Code inserted by SIVAT
-            callbackSuccess = QUOTE(DFUNC(treatmentAdvanced_suricalKit_done));
-            //End of inserted code
             callbackProgress = QUOTE(DFUNC(treatmentAdvanced_surgicalKit_onProgress));
             itemConsumed = QGVAR(consumeItem_SurgicalKit);
             animationCaller = "AinvPknlMstpSnonWnonDnon_medic1";
