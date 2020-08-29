@@ -23,9 +23,7 @@ private _fireModes = getArray (_config >> "modes");
 private _fireRate = [];
 
 {
-    private _n = log (getNumber (_config >> _x >> "reloadTime"));
-    if (!finite _n) then {_n = 0;};
-    _fireRate pushBackUnique _n;
+    _fireRate pushBackUnique log (getNumber (_config >> _x >> "reloadTime"));
 } foreach _fireModes;
 
 _fireRate sort true;
